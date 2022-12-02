@@ -1,0 +1,110 @@
+html {
+  height: 100%;
+  font-size: 100%;
+}
+
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font: 16px/24px Arial, sans-serif;
+  backgound-color: white;
+  color: black;
+}
+
+aside {
+  position: absolute;
+  height: 40px;
+  left: 0%;
+  right: 0%;
+  top: 0px;
+  text-align: center;
+  background: #d8bf95;
+  border-radius: 0px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 1440px;
+  height: 88px;
+  top: 40px;
+  background: #f1f1f1;
+  border-radius: 0px;
+}
+
+.header_left {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 4pc;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 80%;
+}
+
+.header_right {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 3pc;
+  justify-content: space-between;
+  text-decoration: none;
+  width: 20%;
+}
+
+#menu {
+  display: flex;
+  text-decoration: none;
+}
+
+div:hover {
+  background-color: #f89b4d;
+}
+
+div {
+  margin: auto;
+  text-align: center;
+}
+
+.class:visited {
+  color: #4b2f89;
+}
+
+.logo {
+  left: 0;
+  right: 75.23%;
+  top: 0;
+  width: 60px;
+}
+
+.image {
+  display: flex;
+  flex-direction: row;
+}
+
+#image1,
+#image2,
+#image3 {
+  justify-content: space-around;
+  height: 630px;
+}
+
+.text {
+  display: flex;
+  width: 892px;
+  height: 256px;
+  top: -11px;
+  padding: 5pc;
+
+  font-family: 'Roboto', 'Times New Roman', serif;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 64px;
+}
