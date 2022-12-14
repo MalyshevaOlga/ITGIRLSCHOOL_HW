@@ -17,7 +17,12 @@
  // }
  // document.getElementById('errorsInfo').innerHTML= errors.join('. <br>');
 //}
-
+const name = document.getElementById("user_name");
+const surname = document.getElementById("fio");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const btn = document.querySelector("button");
+let user;
 let errors = [];
 
 function checkValidity(input) {
@@ -44,6 +49,30 @@ document.querySelector(".button").addEventListener("click", function (e) {
     }
     let errorDiv = document.querySelector('#errorsInfo');
     errorDiv.innerHTML = errors.join('. <br>');
+
+    user = {
+        id: name.value,
+        surname: surname.value,
+        email: email.value,
+        password: password.value,
+      };
+      post();
 });
+
+async function post() {
+    fetch("https://httpbin.org/post", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((response) => response.json())
+      .then((user) => {
+        console.log(user);
+      })
+      .catch((error) => console.log(error));
+  }
+
 
 
