@@ -59,8 +59,9 @@ document.querySelector(".button").addEventListener("click", function (e) {
       post();
 });
 
-async function post() {
-    fetch("https://httpbin.org/post", {
+function post() {
+    fetch("https://httpbin.org/post", 
+    {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
