@@ -6,74 +6,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/style/3_cats.css">
-    <title>Document</title>
+    <title>Cats</title>
 </head>
 
 <body>
+    <div class="conteiner">
     <h1> Расскажи мне о своём котике </h1>
     <form class="form">
-    <fieldset class="about_people">
-        <legend> Давай знакомится: </legend>
+        <div class="about_people">
+        <fieldset class="owner">
+            <legend> Давай знакомится: </legend>
 
-        <div>
-            <label for="fio"> Имя владельца </label>
-            <input type="text" id="fio" name="fio" placeholder="Имя владельца" required />
-        </div>
-        <div>
-            <label for="telefon"> Номер телефона владельца </label>
-            <input type="tel" id="telefon" name="telefon" placeholder="Телефон" pattern="\+\d{11}" minlength="11"
-                maxlength="12" /></div>
-        <div>
-        </div>
-    </fieldset>
-    <fieldset class="about_cat">
-        <legend> Информация о котике: </legend>
-        <div>
-            <label for="name"> Кличка питомца </label>
-            <input type="text" id="name" name="name" placeholder="Кличка питомца" required />
-        </div>
-        <div>
-            <label for="breed"> Порода вашего питомца: </label><br />
-            <select id="breed">
-                <option value="first option"> Британец</option>
-                <option value="second option"> Сиамский</option>
-                <option value="third option"> Мейн-кун</option>
-                <option value="fourth option"> Сфинкс </option>
-                <option value="fifth option"> Другая </option>
-            </select>
-        </div>
-    
+            <div>
+                <label for="fio"> Имя владельца </label>
+                <input type="text" id="fio" name="fio" placeholder="Имя владельца" required />
+            </div>
+            <div>
+                <label for="telefon"> Номер телефона владельца </label>
+                <input type="tel" id="telefon" name="telefon" placeholder="Телефон" pattern="\+\d{11}" minlength="11"
+                    maxlength="12" /></div>
+            <div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="about_cat">
+        <fieldset class="cat_inform">
+            <legend> Информация о котике: </legend>
+            <div>
+                <label for="name"> Кличка питомца </label>
+                <input type="text" id="name" name="name" placeholder="Кличка питомца" required />
+            </div>
+            <div>
+                <label for="breed"> Порода вашего питомца: </label><br />
+                <select id="breed">
+                    <option value="Британец"> Британец</option>
+                    <option value="Сиамский "> Сиамский</option>
+                    <option value="Мейн-кун"> Мейн-кун</option>
+                    <option value="Сфинкс"> Сфинкс </option>
+                    <option value="Другая"> Другая </option>
+                </select>
+            </div>
 
-    <div>
-        <label for="eat"> Чем питается: </label><br />
-        <input type="checkbox" id="eat"> сухой корм </input><br />
-        <input type="checkbox" id="eat"> влажный корм </input><br />
-        <input type="checkbox" id="eat"> натуральный корм </input><br />
+
+            <div>
+                <label for="food"> Чем питается: </label><br />
+                <input type="checkbox" id="food" name="food" value="сухой корм"> сухой корм </input><br />
+                <input type="checkbox" id="food" name="food" value="влажный корм"> влажный корм </input><br />
+                <input type="checkbox" id="food" name="food" value="натуральный корм"> натуральный корм </input><br />
+            </div>
+
+
+            <div>
+                <label for="sex"> Пол вашего питомца </label><br />
+                Самка <input type="radio" name="sex" value="Самка" /> <br /> Самец <input type="radio" name="sex"
+                    value="Самец" />
+            </div>
+
+
+            <div>
+                <label for="comments">Комментарии владельца:</label> <br />
+                <textarea name="comments" id="comments" rows="10"
+                    cols="30"> Если вы хотите рассказать что-то важное о вашем котике, пишите здесь</textarea>
+            </div>
+        </fieldset>
     </div>
 
+        <div class="foto_cats">
+            <label for="foto"> Добавьте фото вашего питомца </label>
+            <input type="file" id="foto" name="foto" required />
+        </div>
 
-    <div>
-        <label for="sex"> Пол вашего питомца </label><br />
-        Самка <input type="radio" name="sex" /> <br /> Самец <input type="radio" name="sex" />
-    </div>
+        <button type="submit" id="button"> Запомнить котика </button>
+    </form>
+</div>
 
-
-    <div>
-        <label for="comments">Комментарии владельца:</label> <br />
-        <textarea name="comments" id="comments" rows="10"
-            cols="30"> Если вы хотите рассказать что-то важное о вашем котике, пишите здесь</textarea>
-    </div>
-</fieldset>
-
-    <div>
-        <label for="foto"> Добавьте фото вашего питомца </label>
-        <input type="file" id="foto" name="foto" required />
-    </div>
-
-    <button type="submit" id="button"> Сохранить </button>
-</form>
-
-<script src="/src/scripts/3_cat.js"></script>
+    <script src="/src/scripts/3_cats.js"></script>
 </body>
 
 </html>

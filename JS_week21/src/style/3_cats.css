@@ -11,24 +11,77 @@ html {
     overflow-x: hidden;
     overflow-y: auto;
     font: 16px/24px 'Roboto', 'Times New Roman', serif;
-    backgound-color: white;
+    background-image: url(/src/images/fake_cats.jpeg);
     color: black;
   }
+.conteiner {
+  padding: 40px;
+  max-width: 700px;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  background-color: azure;
+  text-align: center;
+}
 
   h1 {
   font-family: 'Roboto', 'Times New Roman', serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  letter-spacing: 1px;
-  color: black;
   text-align: center;
+    color: rgb(4, 4, 4);
+    font-size: 50px;
+    margin: 20px auto;
+  }
+
+  #button {
+    background: #2277f7a1;
+    border: 2px solid #0216fa;
+    border-radius: 4px;
+    margin: 10px 0 10px 0;
+    width: auto;
+    height: 35px;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 18px;
+    text-align: center;
+    color: black;
+
   }
 
   .about_people {
-
+    max-width: 100%;
+    height: auto;
+    background-color: rgba(118, 114, 114, 0.757);
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+    text-align: left;
   }
 
   .about_cat {
-    
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0 10px 0;
+    background-color:rgba(118, 114, 114, 0.757);
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+    text-align: left;
+  }
+
+  .foto_cats {
+    font-family: 'Roboto', 'Times New Roman', serif;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+    color: rgb(4, 4, 4);
+    font-size: 20px;
+    margin: 20px auto;
+  }
+
+  label {
+
   }
