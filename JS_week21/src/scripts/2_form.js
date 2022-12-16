@@ -56,11 +56,7 @@ document.querySelector(".button").addEventListener("click", function (e) {
         email: email.value,
         password: password.value,
       };
-      post();
-});
-
-function post() {
-    fetch("https://httpbin.org/post", 
+      fetch(" https://httpbin.org/post", 
     {
       method: "POST",
       headers: {
@@ -73,7 +69,9 @@ function post() {
         console.log(user);
       })
       .catch((error) => console.log(error));
-  }
+});
+
+
 
 
 
