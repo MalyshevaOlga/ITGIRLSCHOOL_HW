@@ -113,11 +113,11 @@ let heroesJSON = `[{
 
 
 document.addEventListener("DOMContentLoaded", function (event) {
-    let heroes = JSON.parse(heroesJSON);
-    console.log(heroes);
-    let heroesCards = "";
-    for (let hero of heroes) {
-        heroesCards += `<div class="card">
+            let heroes = JSON.parse(heroesJSON);
+            console.log(heroes);
+            let heroesCards = "";
+            for (let hero of heroes) {
+                heroesCards += `<div class="card">
                     <div class="card__name" id="${hero.userName}">${hero.name}</div>
                     <img class="card__img" src="${hero.photo}" alt="image">
                     <div class="card__content">
@@ -126,38 +126,47 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         <p class="card__text">Род деятельности: ${hero.occupation}</p>
                         <p class="card__text">Друзья: ${hero.friends}</p>
                         <p class="card__text">Суперсилы: ${hero.superpower}</p>
+                        <p class="card__text">Оценка супергероя:</p>
                     </div>
-                    <div class="rating_conteiner">
-                    <div class="rating-area" id="rating-area">
-                    <input type="radio" id="star-5" name="rating" class="rating_hero" value="5" checked>
-                    <label for="star-5" title="Оценка «5»"></label>	
-                    <input type="radio" id="star-4" name="rating" class="rating_hero" value="4" checked>
-                    <label for="star-4" title="Оценка «4»"></label>    
-                    <input type="radio" id="star-3" name="rating" class="rating_hero" value="3" checked>
-                    <label for="star-3" title="Оценка «3»"></label>  
-                    <input type="radio" id="star-2" name="rating" class="rating_hero" value="2" checked>
-                    <label for="star-2" title="Оценка «2»"></label>    
-                    <input type="radio" id="star-1" name="rating"class="rating_hero" value="1" checked>
-                    <label for="star-1" title="Оценка «1»"></label>
-                </div>
-                </div>
-                <button type="submit" id="btn">Оцени героя</button>
-                </div>`;
-    }
-    document.querySelector(".card-container").innerHTML = heroesCards;
-    
-    for (let hero of heroes) {
-        document
-            .getElementById(`btn${hero.id}`)
-            .addEventListener('click', function () {
-                let radios = document.querySelectorAll(".rating_hero");
-                let selected = Array.from(radios).find(radio => radio.checked);
-                document.getElementById(`rating-area${hero.id}`).innerHTML = `${selected.value}`;
-                localStorage.setItem(`localRating_${hero.id}`, `${selected.value}`);
-            });
-        if (localStorage.getItem(`localRating_${hero.id}`) !== null) {
-            document.getElementById(`rating-area${hero.id}`).innerHTML = localStorage.getItem(`localRating_${hero.id}`);
-            console.log(localStorage.getItem(`localRating_${hero.id}`));
-        }
-    }
-});
+                    <div class="rating">
+                    <input type="radio" id="star-1" name="rating" class="rating_hero" value="1">
+                    <label for="star-1" title="Оценка «1»">1</label>	
+                    <input type="radio" id="star-2" name="rating" class="rating_hero" value="2">
+                    <label for="star-2" title="Оценка «2»">2</label>	
+                    <input type="radio" id="star-3" name="rating" class="rating_hero" value="3">
+                    <label for="star-3" title="Оценка «3»">3</label>	
+                    <input type="radio" id="star-4" name="rating" class="rating_hero" value="4">
+                    <label for="star-4" title="Оценка «4»">4</label>	
+                    <input type="radio" id="star-5" name="rating" class="rating_hero" value="5">
+                    <label for="star-5" title="Оценка «5»">5</label>	
+                    <input type="radio" id="star-6" name="rating" class="rating_hero" value="6">
+                    <label for="star-6" title="Оценка «6»">6</label>	
+                    <input type="radio" id="star-7" name="rating" class="rating_hero" value="7">
+                    <label for="star-7" title="Оценка «7»">7</label>    
+                    <input type="radio" id="star-8" name="rating" class="rating_hero" value="8">
+                    <label for="star-8" title="Оценка «8»">8</label>  
+                    <input type="radio" id="star-9" name="rating" class="rating_hero" value="9">
+                    <label for="star-9" title="Оценка «9»">9</label>    
+                    <input type="radio" id="star-10" name="rating" class="rating_hero" value="10">
+                    <label for="star-10" title="Оценка «10»">10</label>
+                    </div>
+                    <div id="ratingOutput_${hero.id}"></div>
+                    <button type="submit" id="btn_${hero.id}" class="btn">Оценить героя</button>
+                    </div>`;
+            }
+            document.querySelector(".card-container").innerHTML = heroesCards;
+            for (let hero of heroes) {
+                document.getElementById(`btn_${hero.id}`)
+                .addEventListener('click', function () {
+                        let radios = document.getElementsByName("rating");
+                        let selected = Array.from(radios).find(radio => radio.checked);
+                        document.getElementById(`ratingOutput_${hero.id}`).innerHTML = `${selected.value}/5`;
+                        localStorage.setItem(`localRating_${hero.id}`, `${selected.value}/5`);
+                    });
+                if (localStorage.getItem(`localRating_${hero.id}`) !== null) {
+                    document.getElementById(`ratingOutput_${hero.id}`).innerHTML = localStorage.getItem(`localRating_${hero.id}`);
+                    console.log(localStorage.getItem(`localRating_${hero.id}`));
+                }
+            }
+        });
+
