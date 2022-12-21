@@ -15,9 +15,13 @@ btn.addEventListener("click", (e) => {
       );
       data = await responce.json();
       input.value = "";
+      if (responce.status != 200) {
+        throw new Error("Сервер не доступен");
+      }
       return data;
     } catch (error) {
-      console.log(error);
+      alert("Ошибка: " + error.message);
+      console.log(error.message);
     }
   }
   async function getImg() {
