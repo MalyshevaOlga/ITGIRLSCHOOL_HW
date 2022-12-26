@@ -1,7 +1,3 @@
-const moment = require('moment/locale/ru');
-moment().format('LLLL');
-
-document.querySelector(.time).innerHTML = moment;
 
 const ctx = document.getElementById('myChart-1');
 const ctx2 = document.getElementById('myChart-2');
@@ -82,3 +78,7 @@ const myChartFirst = new Chart(ctxFirst, {
 });
 
 
+const moment = require('moment');
+let now = moment();
+moment.locale('ru');
+console.log(now.format('dddd, MMMM DD YYYY, h:mm:ss'));
