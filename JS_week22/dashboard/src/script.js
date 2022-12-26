@@ -75,3 +75,4 @@ const myChartFirst = new Chart(ctxFirst, {
         }]
     }
 });
+
