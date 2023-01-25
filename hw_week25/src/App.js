@@ -52,6 +52,22 @@ export const options1 = {
     15: { offset: 0.5 },
   },
 };
+export const data2 = [
+  ["Pac Man", "Percentage"],
+  ["", 75],
+  ["", 25],
+];
+
+export const options2 = {
+  legend: "none",
+  pieSliceText: "none",
+  pieStartAngle: 135,
+  tooltip: { trigger: "none" },
+  slices: {
+    0: { color: "yellow" },
+    1: { color: "transparent" },
+  },
+};
 function App() {
   return (
     <div className="App">
@@ -67,6 +83,13 @@ function App() {
       chartType="PieChart"
       data={data1}
       options={options1}
+      width={"100%"}
+      height={"700px"}
+    />
+    <Chart
+      chartType="PieChart"
+      data={data2}
+      options={options2}
       width={"100%"}
       height={"700px"}
     />
