@@ -61,14 +61,14 @@ function App() {
       data={data}
       options={options}
       width={"100%"}
-      height={"400px"}
+      height={"700px"}
     />
     <Chart
       chartType="PieChart"
       data={data1}
       options={options1}
       width={"100%"}
-      height={"400px"}
+      height={"700px"}
     />
       </header>
     </div>
