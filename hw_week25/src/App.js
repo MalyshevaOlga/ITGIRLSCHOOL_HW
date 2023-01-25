@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import React from "react";
 import { Chart } from "react-google-charts";
@@ -19,7 +19,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <Chart
       chartType="PieChart"
       data={data}
